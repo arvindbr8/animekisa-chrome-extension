@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function(){
         let episode = 0;
         chrome.storage.sync.get(["naruto-shippuden-episode#"], function(items) {
             episode = items["naruto-shippuden-episode#"];
-            window.open(`https://animekisa.tv/naruto-shippuden-dubbed-episode-${episode}`, '_blank');
+            window.open("https://animekisa.tv/naruto-shippuden-dubbed"+(episode ? `-episode-${episode}`:""), '_blank');
         })
     }
 })

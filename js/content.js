@@ -1,7 +1,7 @@
 let startTime = new Date();
 let episodeNo = window.location.href.split('-').pop()
 
-let showNotification = function(message, nextEpisode) {
+let showNotificationBar = function(message, nextEpisode) {
 
     bgColor = "#fcf8e3";
     txtColor =  "#c09853";

@@ -95,6 +95,11 @@ class Episode {
     setLastViewedEpisode = async () => {
         let endTime = new Date();
         let timeElapsed = (endTime - startTime) / 60000     // elapsed time [in minutes]
+        if (timeElapsed >= 5) {
+            chrome.storage.sync.set({ "naruto-shippuden-episode#": this.episodeNo }, function () {
+                console.log("AnimeKisa extension: Naruto episode is saved as last viewed.")
+            });
+        } 
         if (timeElapsed >= 15) {
             chrome.storage.sync.set({ "naruto-shippuden-episode#": this.episodeNo }, function () {
                 console.log("AnimeKisa extension: Naruto episode is saved as last viewed.")
